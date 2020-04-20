@@ -4,7 +4,7 @@
   "description": "Typescript setup with Webpack and React",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack-dev-server"
   },
   "author": "Chris Martin",
   "license": "ISC",
@@ -13,9 +13,12 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
     "awesome-typescript-loader": "^5.2.1",
     "typescript": "^3.8.3",
     "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
   }
 }
