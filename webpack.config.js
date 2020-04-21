@@ -14,6 +14,11 @@ module.exports = {
         loader: "awesome-typescript-loader",
         exclude: /node_modules/,
       },
+      {
+        test: /\.js$/,
+        loader: "source-map-loader",
+        enforce: "pre",
+      },
     ],
   },
   plugins: [
@@ -21,4 +26,5 @@ module.exports = {
       template: "./index.html",
     }),
   ],
+  devtool: "source-map",
 };
