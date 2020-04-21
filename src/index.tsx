@@ -1,6 +1,8 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import React from "react";
+import ReactDOM from "react-dom";
+
+import { App } from "./components/App";
 
 const root = document.getElementById("root");
 
-ReactDOM.render(<h1>Typescript, React & Webpack setup</h1>, root);
+ReactDOM.render(<App name="Chris" />, root);
