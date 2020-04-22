@@ -64,6 +64,14 @@ module.exports = (env) => {
       }),
     ],
     devtool: "source-map",
+    devServer: {
+      contentBase: "./dist",
+      port: 3000,
+      overlay: {
+        warnings: true,
+        errors: true,
+      },
+    },
     resolve: {
       extensions: [".js", ".ts", ".tsx", ".scss"],
     },
