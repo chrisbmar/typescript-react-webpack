@@ -1,15 +1,21 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = (env) => {
   const devMode = env.NODE_ENV !== "production";
 
+  devMode
+    ? console.log("Currently in development mode!")
+    : console.log("Currently in production mode!");
+
   return {
+    mode: env.NODE_ENV,
     entry: "./src/index.tsx",
     output: {
       path: path.resolve(__dirname, "dist"),
-      filename: "bundle.js",
+      filename: devMode ? "bundle.js" : "[hash].bundle.js",
     },
     module: {
       rules: [
@@ -48,6 +54,7 @@ module.exports = (env) => {
       ],
     },
     plugins: [
+      new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: "./index.html",
       }),
