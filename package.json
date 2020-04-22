@@ -4,7 +4,8 @@
   "description": "Typescript setup with Webpack and React",
   "main": "webpack.config.js",
   "scripts": {
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server --env.NODE_ENV=development",
+    "prod": "webpack-dev-server --env.NODE_ENV=production"
   },
   "author": "Chris Martin",
   "license": "ISC",
@@ -16,7 +17,11 @@
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
     "awesome-typescript-loader": "^5.2.1",
+    "css-loader": "^3.5.2",
     "html-webpack-plugin": "^4.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2",
     "source-map-loader": "^0.2.4",
     "typescript": "^3.8.3",
     "webpack": "^4.42.1",
