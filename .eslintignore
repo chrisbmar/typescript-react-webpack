@@ -2,3 +2,4 @@ public/
 node_modules/
 plugins/
 dist
+webpack.config.js

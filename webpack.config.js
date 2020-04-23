@@ -6,13 +6,9 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = (env) => {
   const devMode = env.NODE_ENV !== "production";
 
-  devMode
-    ? console.log("Currently in development mode!")
-    : console.log("Currently in production mode!");
-
   return {
     mode: env.NODE_ENV,
-    entry: "./src/index.tsx",
+    entry: "./src/client/index.tsx",
     output: {
       path: path.resolve(__dirname, "dist"),
       filename: devMode ? "bundle.js" : "[hash].bundle.js",
@@ -56,7 +52,7 @@ module.exports = (env) => {
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-        template: "./index.html",
+        template: "./src/client/index.html",
       }),
       new MiniCssExtractPlugin({
         filename: devMode ? "[name].css" : "[name].[hash].css",
